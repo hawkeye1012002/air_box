@@ -1,0 +1,28 @@
+{
+    "name": "air_station",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*",
+        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3",
+        "logyun": "github:iCShopMgr/CIRCUS_Pi_Logyun#240af1b57dd6ae3efd90a7b3359e3b291b1987f0",
+        "mbitbot_airbox": "github:iCShopMgr/MbitBot_AirBox#538c3967583c6637607d0a20a13157adcce82b5c"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "4.0.18",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
