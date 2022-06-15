@@ -35,6 +35,14 @@ basic.forever(function () {
     "The Muscle",
     "hawkeye101200"
     )
+    logyun.logyun_thingspeak(
+    "E0Y90IK1T4UXK82K",
+    D1,
+    D2,
+    D3,
+    D4,
+    D5
+    )
     logyun.logyun_googlesheet(
     "1twzdFEyyjmKD6zXmi0Fp84ANBxPlXqBjzsRlyj4wNhE",
     convertToText(D1),
@@ -43,7 +51,7 @@ basic.forever(function () {
     convertToText(D4),
     convertToText(D5)
     )
-    basic.pause(1000)
+    basic.pause(15000)
 })
 control.inBackground(function () {
     basic.pause(3000)
