@@ -7,6 +7,7 @@ mbitbot_airbox.oled_init()
 mbitbot_airbox.oled_font_size(OLED_Size.size1)
 mbitbot_airbox.PMS3003_SET(soft_serial.serial_2, soft_serial.serial_1, setMode.setmode2)
 let strip = neopixel.create(DigitalPin.P12, 2, NeoPixelMode.RGB)
+strip.setBrightness(15)
 basic.forever(function () {
     mbitbot_airbox.get_pms3003(soft_serial.pms_serial_2, soft_serial.pms_serial_1)
     basic.pause(1000)
@@ -15,16 +16,16 @@ basic.forever(function () {
     D3 = mbitbot_airbox.data_pms3003(PMS5003_data.data_3)
     D4 = mbitbot_airbox.dht11(DigitalPin.P8, DHTState.temp)
     D5 = mbitbot_airbox.dht11(DigitalPin.P8, DHTState.humid)
-    if (D2 < 25) {
+    if (D5 < 60) {
         basic.showIcon(IconNames.Happy)
         strip.showColor(neopixel.colors(NeoPixelColors.Green))
-    } else if (D2 < 35) {
+    } else if (D5 < 70) {
         basic.showIcon(IconNames.Asleep)
         strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
-    } else if (D2 < 45) {
+    } else if (D5 < 80) {
         basic.showIcon(IconNames.Sad)
         strip.showColor(neopixel.colors(NeoPixelColors.Orange))
-    } else {
+    } else if (D5 < 100) {
         basic.showIcon(IconNames.Skull)
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
     }
