@@ -32,7 +32,7 @@ basic.forever(function () {
     logyun.connect_logyun(
     soft_serial.serial_13,
     soft_serial.serial_14,
-    "The Muscle",
+    "SweetHome",
     "hawkeye101200"
     )
     logyun.logyun_thingspeak(
@@ -43,15 +43,7 @@ basic.forever(function () {
     D4,
     D5
     )
-    logyun.logyun_googlesheet(
-    "1twzdFEyyjmKD6zXmi0Fp84ANBxPlXqBjzsRlyj4wNhE",
-    convertToText(D1),
-    convertToText(D2),
-    convertToText(D3),
-    convertToText(D4),
-    convertToText(D5)
-    )
-    basic.pause(15000)
+    basic.pause(60000)
 })
 control.inBackground(function () {
     basic.pause(3000)
