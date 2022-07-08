@@ -10,7 +10,7 @@ let strip = neopixel.create(DigitalPin.P12, 2, NeoPixelMode.RGB)
 strip.setBrightness(15)
 basic.forever(function () {
     mbitbot_airbox.get_pms3003(soft_serial.pms_serial_2, soft_serial.pms_serial_1)
-    basic.pause(1000)
+    basic.pause(5000)
     D1 = mbitbot_airbox.data_pms3003(PMS5003_data.data_1)
     D2 = mbitbot_airbox.data_pms3003(PMS5003_data.data_2)
     D3 = mbitbot_airbox.data_pms3003(PMS5003_data.data_3)
@@ -43,21 +43,21 @@ basic.forever(function () {
     D4,
     D5
     )
-    basic.pause(60000)
+    basic.pause(3600000)
 })
 control.inBackground(function () {
-    basic.pause(3000)
+    basic.pause(5000)
     while (true) {
         mbitbot_airbox.oled_clear()
         mbitbot_airbox.oled_showString(0, 0, "AirBox")
         mbitbot_airbox.oled_showString(0, 1, "PM 1.0:" + D1)
         mbitbot_airbox.oled_showString(0, 2, "PM 2.5:" + D2)
         mbitbot_airbox.oled_showString(0, 3, "PM 10 :" + D3)
-        basic.pause(3000)
+        basic.pause(5000)
         mbitbot_airbox.oled_clear()
         mbitbot_airbox.oled_showString(0, 0, "AirBox")
         mbitbot_airbox.oled_showString(0, 1, "Temp :" + D4)
         mbitbot_airbox.oled_showString(0, 2, "Humid :" + D5)
-        basic.pause(3000)
+        basic.pause(5000)
     }
 })
